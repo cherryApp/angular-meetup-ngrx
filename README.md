@@ -29,3 +29,14 @@ __Várunk az Angular NgRX meetup-on!__
 - Kapcsolódunk egy szervezhez és listázunk valamilyen adatot.
 - Aztán cache-eljük az objektumokat.
 - Végül lehet kérdezni.
+
+## Előadó
+- Cserkó József
+- 10 év frontend fejlesztés
+- Netacademia múlt
+- Training360 oktatás
+- A jó öreg PHP után már elég korán a JAVASCRIPT felé fordult az 
+érdeklődésem. Mindenféle keretrendszerre nyitott vagyok, 
+szeretem több oldalról megvizsgálni a dolgokat.
+- Angular már a kezdetektől a barátom. Persze eleinte engem is 
+idegesített, de ahogy kezdem érteni, egyre jobban szeretem :)
