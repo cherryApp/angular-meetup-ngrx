@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { map, Observable, of, switchMap } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, Observable, of, switchMap } from 'rxjs';
 import { ConfigService } from './service/config.service';
 
 @Component({
@@ -10,17 +10,14 @@ import { ConfigService } from './service/config.service';
 })
 export class AppComponent {
   // Get page title based on the current url.
-  title$: Observable<string> = this.activatedRoute.fragment.pipe(
-    map( fragment => this.config.navItems.find(i => {
-      console.log( fragment )
-      return '';
-//        return i.href === `/${url.toString()}`;
-      })?.text || ''
-    ),
+  title$: Observable<string> = this.router.events.pipe(
+    filter( event => event instanceof NavigationEnd),
+    map( () => this.config.navItems.find(i => i.href === this.router.url)?.text || '' ),
   );
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private config: ConfigService,
   ) {}
 
