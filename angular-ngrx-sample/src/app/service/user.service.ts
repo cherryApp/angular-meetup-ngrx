@@ -12,7 +12,7 @@ export class UserService extends BaseService<User> {
   constructor(
     public override http: HttpClient,
   ) {
-    super(http, 'products');
+    super(http, 'users');
   }
 
 }

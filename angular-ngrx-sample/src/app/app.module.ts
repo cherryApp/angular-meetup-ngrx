@@ -14,6 +14,7 @@ import { UsersComponent } from './page/users/users.component';
 import { ProductsComponent } from './page/products/products.component';
 import { NavigationComponent } from './common/navigation/navigation.component';
 import { HeaderComponent } from './common/header/header.component';
+import { TableComponent } from './common/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './common/header/header.component';
     UsersComponent,
     ProductsComponent,
     NavigationComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

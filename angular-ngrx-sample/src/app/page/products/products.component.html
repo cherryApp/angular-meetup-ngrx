@@ -1,1 +1,5 @@
-<p>products works!</p>
+<app-table
+  [title]="'Product table'"
+  [cols]="cols"
+  [rows]="list$ | async"
+></app-table>
