@@ -12,7 +12,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  list$: Observable<User[]> = this.userService.readAll();
+  list$: Observable<User[]> = this.userService.list$;
 
   cols: ITableCol[] = this.config.userTableColumns;
 
@@ -23,10 +23,17 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.userService.readAll();
   }
 
   onEdit(user: User): void {
     this.router.navigate(['/', 'users', 'edit', user.id]);
+  }
+
+  onRemove(user: User): void {
+    this.userService.delete(user.id).subscribe(
+      () => {},
+    );
   }
 
 }

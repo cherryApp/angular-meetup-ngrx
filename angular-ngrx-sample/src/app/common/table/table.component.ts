@@ -18,6 +18,7 @@ export class TableComponent<T extends ITableData> implements OnInit {
   @Input() title: string = 'table';
 
   @Output() startEdit: EventEmitter<T> = new EventEmitter<T>();
+  @Output() startRemove: EventEmitter<T> = new EventEmitter<T>();
 
   constructor() { }
 
@@ -26,6 +27,10 @@ export class TableComponent<T extends ITableData> implements OnInit {
 
   onEdit(entity: T): void {
     this.startEdit.emit(entity);
+  }
+
+  onRemove(entity: T): void {
+    this.startRemove.emit(entity);
   }
 
 }

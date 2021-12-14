@@ -27,9 +27,14 @@
                   </div>
                 </td>
                 <td>
-                  <button (click)="onEdit(row)" class="btn btn-info mt-3">
-                    <i class="material-icons opacity-10">edit</i>
-                  </button>
+                  <div class="btn-group">
+                    <button (click)="onEdit(row)" class="btn btn-info mt-3">
+                      <i class="material-icons opacity-10">edit</i>
+                    </button>
+                    <button (click)="onRemove(row)" class="btn btn-danger mt-3">
+                      <i class="material-icons opacity-10">delete</i>
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>

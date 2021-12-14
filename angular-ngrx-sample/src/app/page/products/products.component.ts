@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
   cols: ITableCol[] = this.config.productTableColumns;
 
-  list$: Observable<Product[]> = this.productService.readAll();
+  list$: BehaviorSubject<Product[]> = this.productService.list$;
 
   constructor(
     private config: ConfigService,
@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.productService.readAll();
   }
 
   onEdit(product: Product): void {
