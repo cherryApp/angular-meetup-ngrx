@@ -2,4 +2,5 @@
   [title]="'User table'"
   [cols]="cols"
   [rows]="list$ | async"
+  (startEdit)="onEdit($event)"
 ></app-table>

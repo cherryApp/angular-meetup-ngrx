@@ -15,6 +15,9 @@ import { ProductsComponent } from './page/products/products.component';
 import { NavigationComponent } from './common/navigation/navigation.component';
 import { HeaderComponent } from './common/header/header.component';
 import { TableComponent } from './common/table/table.component';
+import { UserEditorComponent } from './page/user-editor/user-editor.component';
+import { ProductEditorComponent } from './page/product-editor/product-editor.component';
+import { FormComponent } from './common/form/form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { TableComponent } from './common/table/table.component';
     ProductsComponent,
     NavigationComponent,
     HeaderComponent,
-    TableComponent
+    TableComponent,
+    UserEditorComponent,
+    ProductEditorComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

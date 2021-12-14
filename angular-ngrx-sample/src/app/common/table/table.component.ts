@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ITableCol } from 'src/app/service/config.service';
 
 export interface ITableData {
@@ -17,9 +17,15 @@ export class TableComponent<T extends ITableData> implements OnInit {
   @Input() rows: T[] | null = [];
   @Input() title: string = 'table';
 
+  @Output() startEdit: EventEmitter<T> = new EventEmitter<T>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEdit(entity: T): void {
+    this.startEdit.emit(entity);
   }
 
 }

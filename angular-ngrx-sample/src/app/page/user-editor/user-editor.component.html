@@ -1,0 +1,6 @@
+<app-form
+  *ngIf="user$ | async as user"
+  [entity]="user"
+  [items]="items"
+  (onSend)="onSend($event)"
+></app-form>
