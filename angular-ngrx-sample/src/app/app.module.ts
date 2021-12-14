@@ -18,6 +18,7 @@ import { TableComponent } from './common/table/table.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { ProductEditorComponent } from './page/product-editor/product-editor.component';
 import { FormComponent } from './common/form/form.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormComponent } from './common/form/form.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

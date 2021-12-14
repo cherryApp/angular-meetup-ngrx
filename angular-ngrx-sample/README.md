@@ -19,4 +19,13 @@ observable stream-be, ahol újra meghívjuk/frissítjuk a list$ értékét.
 
 ## 2. Gyakorlat
 - Megvalósítjuk a működést NgRx segítségével.
+- NgRx beállítása:
+- `ng add @ngrx/store@latest` hozzáadja és beállítja az NgRx-et.
+- Érdemes feltenni az NgRx schema generátort is, hogy ne kelljen kézzel létrehozni a Store-okat.
+- `https://ngrx.io/guide/schematics`
+- `npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools`
+- `npm i @ngrx/schematics -D`
+- Tegyük külön modulokban a store-okat a könnyebb kezelhetőség érdekében:
+- `ng generate module product-store --flat false`
+- `ng generate store product-store/Product -m product-store.module.ts`
 
