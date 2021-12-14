@@ -1,1 +1,6 @@
-<p>product-editor works!</p>
+<app-form
+  *ngIf="product$ | async as product"
+  [items]="items"
+  [entity]="product"
+  (onSend)="onUpdate($event)"
+></app-form>

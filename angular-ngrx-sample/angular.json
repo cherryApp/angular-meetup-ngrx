@@ -45,7 +45,6 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/chartist/dist/chartist.min.js",
-              "src/assets/material-dashboard-master/assets/js/material-dashboard.min.js",
               "src/assets/js/init-dashboard.js"
             ]
           },

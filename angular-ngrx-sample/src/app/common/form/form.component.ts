@@ -29,7 +29,7 @@ export class FormComponent<T extends IFormEntity> implements OnInit {
   }
 
   checkInputTypes(type: string): boolean {
-    return ['text', 'date', 'hidden', 'password'].includes(type);
+    return ['text', 'date', 'hidden', 'password', 'number'].includes(type);
   }
 
   buildForm(): void {
@@ -44,7 +44,7 @@ export class FormComponent<T extends IFormEntity> implements OnInit {
   }
 
   send(): void {
-    this.onSend.emit(this.entity);
+    this.onSend.emit(this.group.value);
   }
 
 }

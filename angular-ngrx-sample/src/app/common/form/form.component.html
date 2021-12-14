@@ -10,7 +10,9 @@
         <div class="card-body">
           <form (ngSubmit)="send()" [formGroup]="group" role="form"
             class="text-start">
-            <div *ngFor="let item of items" class="input-group input-group-outline my-3">
+            <div *ngFor="let item of items"
+              class="input-group input-group-outline my-3"
+              [class.is-filled]="group.controls[item.key]?.value">
               <ng-container *ngIf="checkInputTypes(item.type)">
                 <label *ngIf="item.type !== 'hidden'" class="form-label">{{ item.title }}</label>
                 <input
@@ -28,7 +30,11 @@
             </div> -->
 
             <div class="text-center">
-              <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Save</button>
+              <button
+                [disabled]="group.invalid"
+                type="submit"
+                class="btn bg-gradient-primary w-100 my-4 mb-2"
+              >Save</button>
             </div>
           </form>
         </div>
