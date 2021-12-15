@@ -14,7 +14,7 @@ export interface ITableData {
 export class TableComponent<T extends ITableData> implements OnInit {
 
   @Input() cols: ITableCol[] = [];
-  @Input() rows: T[] | null = [];
+  @Input() rows: readonly T[] | null = [];
   @Input() title: string = 'table';
 
   @Output() startEdit: EventEmitter<T> = new EventEmitter<T>();

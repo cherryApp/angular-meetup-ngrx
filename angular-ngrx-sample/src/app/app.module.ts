@@ -6,6 +6,8 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 
+import { StoreModule } from '@ngrx/store';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
@@ -18,7 +20,7 @@ import { TableComponent } from './common/table/table.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { ProductEditorComponent } from './page/product-editor/product-editor.component';
 import { FormComponent } from './common/form/form.component';
-import { StoreModule } from '@ngrx/store';
+import { productReducer } from './state/product/reducers';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ products: productReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

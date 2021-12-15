@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { UserService } from 'src/app/service/user.service';
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  list$: Observable<User[]> = this.userService.list$;
+  list$: Observable<readonly User[]> = of([]);
 
   cols: ITableCol[] = this.config.userTableColumns;
 
@@ -20,10 +21,13 @@ export class UsersComponent implements OnInit {
     private config: ConfigService,
     private userService: UserService,
     private router: Router,
+    private store: Store,
   ) { }
 
   ngOnInit(): void {
-    this.userService.readAll();
+    this.userService.readAll().subscribe(
+      //
+    )
   }
 
   onEdit(user: User): void {

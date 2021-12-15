@@ -19,10 +19,8 @@ export class BaseService<T extends { id?: number }> {
     @Inject('string') protected entityName: string,
   ) { }
 
-  readAll(): void {
-    this.http.get<T[]>(`${this.apiUrl}${this.entityName}`).subscribe(
-      list => this.list$.next(list),
-    );
+  readAll(): Observable<T[]> {
+    return this.http.get<T[]>(`${this.apiUrl}${this.entityName}`);
   }
 
   read(id: number): Observable<T> {

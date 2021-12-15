@@ -25,6 +25,7 @@
     "bootstrap": "^5.1.3",
     "chartist": "^0.11.4",
     "font-awesome": "^4.7.0",
+    "ngrx-data": "^6.1.0-beta.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
