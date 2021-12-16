@@ -17,13 +17,20 @@ observable stream-be, ahol újra meghívjuk/frissítjuk a list$ értékét.
 - `src\app\page\users\users.component.ts` megváltoztatjuk a feliratkozást.
 - `src\app\page\products\products.component.ts` megváltoztatjuk a feliratkozást.
 
-## 2. Gyakorlat
+## 2. NgRx beállítása
 - Megvalósítjuk a működést NgRx segítségével.
 - NgRx beállítása:
 - `ng add @ngrx/store@latest` hozzáadjuk és beállítjuk az NgRx-et.
 - `npm i @ngrx/effects @ngrx/entity @ngrx/store @ngrx/store-devtools ngrx-data`
-- `ng g m store/user/user-store --flat -m app` külön modulba a Store-t.
-- `src\app\store\user\UserActions.ts` Action-ok.
-- 
-- 
-
+ 
+## 3. A Store
+- Minden ide vonatkozó fájlt itt találsz:
+- `src/app/state/product`
+- Még szükséges beállítani a store-t az app.module-ban is:
+```typescript
+StoreModule.forRoot({
+  products: productReducer,
+  router: routerReducer,
+}),
+EffectsModule.forRoot([ ProductEffects ]),
+```
