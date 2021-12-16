@@ -1,15 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { loadItems, loadItem } from './actions';
+import { loadItems, loadItem } from './product.actions';
 import { Product } from 'src/app/model/product';
 
 export interface State {
   [x: string]: any;
-  users: { items: Product[], selected: Product | null, error: any };
+  products: { items: Product[], selected: Product | null, error: any };
 }
 
 export const initialState: State = {
-  users: { items: [], selected: null, error: null }
+  products: { items: [], selected: null, error: null }
 };
 
 export const productReducer = createReducer(
@@ -19,7 +19,7 @@ export const productReducer = createReducer(
     items: action.items
   })),
   on(loadItem, (state, action) => ({
-    ...state,
-    selected: action.item
+      ...state,
+      selected: action.item
   })),
 );

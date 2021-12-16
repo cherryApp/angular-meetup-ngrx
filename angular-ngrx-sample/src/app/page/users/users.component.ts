@@ -25,9 +25,7 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.readAll().subscribe(
-      //
-    )
+    this.userService.readAll().subscribe();
   }
 
   onEdit(user: User): void {
